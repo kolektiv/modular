@@ -1,0 +1,22 @@
+{
+  "name": "modular",
+  "version": "0.0.0",
+  "description": "modular =======",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kolektiv/modular.git"
+  },
+  "author": "Andrew Cherry (kolektiv)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kolektiv/modular/issues"
+  },
+  "homepage": "https://github.com/kolektiv/modular",
+  "dependencies": {
+    "node-static": "^0.7.3"
+  }
+}
