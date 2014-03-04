@@ -3,7 +3,7 @@ var stat = require('node-static');
 
 var components = [
 	{ name: 'core', port: 8081 },
-	{ name: 'menu', port: 8082 }
+	{ name: 'bi', port: 8082 }
 ];
 
 components.forEach(function (c) {

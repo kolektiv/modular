@@ -1,6 +1,6 @@
 [
 	{
-		"name": "Menu",
-		"componentUrl": "/menu/js/app/menu.js"
+		"name": "BI",
+		"componentUrl": "/bi/js/app/bi.js"
 	}
 ]
