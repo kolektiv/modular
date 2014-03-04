@@ -1,9 +1,12 @@
-define(['amd', 'app/core'], function (amd, core) {
-	core.config(function ($routeProvider) {
-		$routeProvider.when('/bi', amd.route({
+angular.module('bi', ['ngRoute'])
+
+	.config(function ($routeProvider) {
+		$routeProvider.when('/bi', {
 			controller: 'BiController',
-			controllerUrl: '/bi/js/app/controllers/bi.js',
 			templateUrl: '/bi/js/app/views/bi.html'
-		}));
+		});
+	})
+
+	.controller('BiController', function ($scope) {
+		$scope.greeting = 'Hello from BI!';
 	});
-});
