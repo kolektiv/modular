@@ -22,15 +22,23 @@
 		dependenciesLoaded += 1;
 
 		if (dependenciesLoaded == deps.length) {
-			angular.bootstrap(document, ['core']);
+			angular.bootstrap(document, ['Core']);
 		}
 	};
 
-	angular.module('core', ['ngRoute'].concat(deps.map (function (d) { return d.name })))
+	angular.module('Core', ['ngRoute'].concat(deps.map (function (d) { return d.name })))
 	
 		.controller('NavController', function ($scope) {
 			$scope.greeting = 'Hello from Nav!';
 			$scope.template = '/js/app/views/nav.html';
+		});
+
+	angular.module('Menu', [])
+
+		.service('MenuService', function () {
+			this.greeting = function () {
+				return 'Hello! From the Menu Service...';
+			};
 		});
 
 	deps.forEach(loadDependency);
