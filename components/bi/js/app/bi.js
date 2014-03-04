@@ -1,4 +1,4 @@
-angular.module('bi', ['ngRoute', 'menu'])
+angular.module('BI', ['ngRoute', 'Navigation'])
 
 	.config(function ($routeProvider) {
 		$routeProvider.when('/bi', {
@@ -7,6 +7,6 @@ angular.module('bi', ['ngRoute', 'menu'])
 		});
 	})
 
-	.controller('BiController', ['$scope', 'MenuService', function (scope, service) {
+	.controller('BiController', ['$scope', 'NavigationService', function (scope, service) {
 		scope.greeting = service.greeting();
 	}]);

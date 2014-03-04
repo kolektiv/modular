@@ -2,7 +2,7 @@
 	
 	var deps = [
 		{ 
-			name: 'bi', 
+			name: 'BI', 
 			url: '/bi/js/app/bi.js'
 		}
 	];
@@ -26,18 +26,18 @@
 		}
 	};
 
-	angular.module('Core', ['ngRoute'].concat(deps.map (function (d) { return d.name })))
-	
-		.controller('NavController', function ($scope) {
-			$scope.greeting = 'Hello from Nav!';
+	angular.module('Core', [].concat(deps.map (function (d) { return d.name })));	
+		
+	angular.module('Navigation', [])
+
+		.controller('NavigationController', function ($scope) {
+			$scope.greeting = 'Hello from Navigation!';
 			$scope.template = '/js/app/views/nav.html';
-		});
+		})
 
-	angular.module('Menu', [])
-
-		.service('MenuService', function () {
+		.service('NavigationService', function () {
 			this.greeting = function () {
-				return 'Hello! From the Menu Service...';
+				return 'Hello! From the Navigation Service...';
 			};
 		});
 
