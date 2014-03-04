@@ -26,18 +26,33 @@
 		}
 	};
 
-	angular.module('Core', [].concat(deps.map (function (d) { return d.name })));	
+	angular.module('Core', ['ngRoute'].concat(deps.map (function (d) { return d.name })))
+	
+		.config(function ($locationProvider) {
+			$locationProvider.html5Mode(true);
+			console.log('core config');
+		});
 		
 	angular.module('Navigation', [])
 
-		.controller('NavigationController', function ($scope) {
-			$scope.greeting = 'Hello from Navigation!';
+		.controller('NavigationController', function ($scope, NavigationFactory) {
+			$scope.registry = NavigationFactory.view();
+			$scope.greeting = 'Navigation';
 			$scope.template = '/js/app/views/nav.html';
 		})
 
-		.service('NavigationService', function () {
-			this.greeting = function () {
-				return 'Hello! From the Navigation Service...';
+		.factory('NavigationFactory', function () {
+			var registry = [{ name: 'test' }];
+
+			return {
+				register: function (name) {
+					registry.push({
+						name: name
+					});
+				},
+				view: function () {
+					return registry;
+				}
 			};
 		});
 

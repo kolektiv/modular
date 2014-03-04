@@ -7,6 +7,10 @@ angular.module('BI', ['ngRoute', 'Navigation'])
 		});
 	})
 
-	.controller('BiController', ['$scope', 'NavigationService', function (scope, service) {
-		scope.greeting = service.greeting();
+	.run(function (NavigationFactory) {
+		NavigationFactory.register('Business Intelligence');
+	})
+
+	.controller('BiController', ['$scope', function (scope) {
+		scope.greeting = 'Hello from BI!';
 	}]);
